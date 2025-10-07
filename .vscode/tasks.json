@@ -1,0 +1,49 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Local HTTP Server",
+      "type": "shell",
+      "command": "python3 -m http.server 8000 --bind 127.0.0.1",
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "python-http-server",
+        "pattern": [],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".+",
+          "endsPattern": "Serving HTTP on"
+        }
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    }
+    ,
+    {
+      "label": "Start Game HTTP Server (game cwd)",
+      "type": "shell",
+      "command": "python3 -m http.server 8000 --bind 127.0.0.1",
+      "options": { "cwd": "${workspaceFolder}/tower of trials" },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "python-http-server-game",
+        "pattern": [],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".+",
+          "endsPattern": "Serving HTTP on"
+        }
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    }
+  ]
+}
+
